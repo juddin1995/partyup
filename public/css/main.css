@@ -69,6 +69,10 @@ button:hover {
   column-gap: 5vmin;
 }
 
+h2 .find-game {
+  color: white;
+}
+
 .portal2 {
   width: 300px;
   height: 450px;
@@ -149,7 +153,7 @@ button:hover {
   object-fit: cover;
 }
 
-.tonyhawkproskater {
+.wobblylife {
   width: 300px;
   height: 450px;
   border: 2px solid #000;
@@ -163,10 +167,8 @@ button:hover {
   margin: 20px auto;
 }
 
-.tonyhawkproskater-image {
+.wobblylife-image {
   max-width: 100%;
   max-height: 100%;
   object-fit: cover;
 }
-
-
