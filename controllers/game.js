@@ -22,6 +22,14 @@ router.post("/portal2", ensureLoggedIn, async (req, res) => {
   res.redirect('/games/gameCollection/portal2');
 });
 
+// DELETE /portal2
+router.delete("/portal2", ensureLoggedIn, async (req, res) => {
+  const owner = await User.findById(req.user._id);
+  owner.comments.pull(-1);
+  await owner.save();
+  res.redirect('/games/gameCollection/portal2');
+})
+
 // GET /chainedTogether
 router.get("/chainedTogether", ensureLoggedIn, async (req, res) => {
   const owner = await User.findById(req.user._id);
@@ -48,6 +56,34 @@ router.post("/eldenRing", ensureLoggedIn, async (req, res) => {
   owner.comments.push(req.body);
   await owner.save();
   res.redirect('/games/gameCollection/eldenRing');
+});
+
+// GET /itTakesTwo
+router.get("/itTakesTwo", ensureLoggedIn, async (req, res) => {
+  const owner = await User.findById(req.user._id);
+  res.render("games/itTakesTwo.ejs", { owner });
+});
+
+// POST /itTakesTwo
+router.post("/itTakesTwo", ensureLoggedIn, async (req, res) => {
+  const owner = await User.findById(req.user._id);
+  owner.comments.push(req.body);
+  await owner.save();
+  res.redirect('/games/gameCollection/itTakesTwo');
+});
+
+// GET /wobblyLife
+router.get("/wobblyLife", ensureLoggedIn, async (req, res) => {
+  const owner = await User.findById(req.user._id);
+  res.render("games/wobblyLife.ejs", { owner });
+});
+
+// POST /wobblyLife
+router.post("/wobblyLife", ensureLoggedIn, async (req, res) => {
+  const owner = await User.findById(req.user._id);
+  owner.comments.push(req.body);
+  await owner.save();
+  res.redirect('/games/gameCollection/wobblyLife');
 });
 
 module.exports = router;

@@ -1,0 +1,22 @@
+<%- include('../partials/header.ejs') %>
+
+<header class="hero">
+  <div class="hero-content">
+    <img src="https://cdn2.steamgriddb.com/hero_thumb/2cb8fad3edc28e6f8cc7f72e92fc8142.jpg" alt="Wobbly Life Hero Image">
+  </div>
+</header>
+
+<div class="comments">
+  <form action="/games/gameCollection/wobblyLife" method="POST">
+    <textarea name="content"> </textarea>
+    <button type="submit">Comment</button>
+  </form>
+
+  <section class="comments-display">
+    <% owner.comments.forEach((comment) => { %>
+    <p><%= owner.username %> says:</p>
+    <p><%= comment.content %></p>
+    <% }); %>
+  </section>
+</div>
+<%- include('../partials/footer.ejs') %>
