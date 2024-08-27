@@ -11,6 +11,10 @@ body {
   background-color: rgb(5, 6, 7);
 }
 
+p {
+  color: white;
+}
+
 nav,
 footer {
   background-color: rgb(72, 104, 44);
@@ -171,7 +175,25 @@ button:hover {
 
 .link-container {
   display: flex;
-  /* justify-content: space-between; */
-  /* align-items: space-between; */
   column-gap: 27vmin;
+}
+
+.hero {
+  position: relative;
+  height: 38.8vh;
+  background: no-repeat center center/cover;
+  color: #fff;
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 20px;
+}
+
+.comments {
+  margin-top: 5vmin;
 }

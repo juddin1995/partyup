@@ -14,9 +14,9 @@
     <a href="/">HOME</a>
     <div>
       <% if (user) { %>
-        <a href="../games/gameCollection">Game Collection</a>&nbsp;&nbsp;
+        <a href="/games/gameCollection">Game Collection</a>&nbsp;&nbsp;
         <a href="/auth/logout">LOG OUT</a>&nbsp;&nbsp;
-        <span>Wecome, <%= user.username %></span>
+        <span>Welcome, <%= user.username %></span>
       <% } else { %>
         <a href="/auth/sign-up">SIGN UP</a>
         <a href="/auth/login">LOG IN</a>

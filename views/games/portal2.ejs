@@ -1,5 +1,22 @@
 <%- include('../partials/header.ejs') %>
 
+<header class="hero">
+  <div class="hero-content">
+    <img src="https://cdn2.steamgriddb.com/hero/dbab2adc8f9d078009ee3fa810bea142.png" alt="Portal 2 Hero Image">
+  </div>
+</header>
 
+<div class="comments">
+  <form action="/games/gameCollection/portal2" method="POST">
+    <textarea name="content"> </textarea>
+    <button type="submit">Comment</button>
+  </form>
 
+  <section class="comments-display">
+    <% owner.comments.forEach((comment) => { %>
+    <p><%= owner.username %> says:</p>
+    <p><%= comment.content %></p>
+    <% }); %>
+  </section>
+</div>
 <%- include('../partials/footer.ejs') %>

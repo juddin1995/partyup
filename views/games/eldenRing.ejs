@@ -1,0 +1,22 @@
+<%- include('../partials/header.ejs') %>
+
+<header class="hero">
+  <div class="hero-content">
+    <img src="https://cdn2.steamgriddb.com/hero/5b359e020d0c4726dd6876f6e6500648.png" alt="Elden Ring Hero Image">
+  </div>
+</header>
+
+<div class="comments">
+  <form action="/games/gameCollection/eldenRing" method="POST">
+    <textarea name="content"> </textarea>
+    <button type="submit">Comment</button>
+  </form>
+
+  <section class="comments-display">
+    <% owner.comments.forEach((comment) => { %>
+    <p><%= owner.username %> says:</p>
+    <p><%= comment.content %></p>
+    <% }); %>
+  </section>
+</div>
+<%- include('../partials/footer.ejs') %>
