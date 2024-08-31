@@ -1,0 +1,31 @@
+<%- include('../partials/header.ejs') %>
+
+<header class="hero">
+  <div class="hero-content">
+    <img src="<%= game.url %>" alt="<%= game.title %> Hero Image">
+  </div>
+</header>
+
+<div class="comments">
+  <form action="/games/<%= game._id %>/comment" method="POST">
+    <textarea name="text"> </textarea>
+    <button type="submit">Comment</button>
+  </form>
+
+  <section class="comments-display">
+    <% game.comments.forEach((comment) => { %>
+    <p><%= comment.user.username %> says:</p>
+    <p><%= comment.text %></p>
+
+    <a href="/games/<%= game._id %>/comments/<%= comment._id%>/edit">Edit Comment</a>
+
+    <form action="/games/<%= game._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
+      <button id="delete-btn" type="submit">❌</button>
+    </form>
+
+    <% }); %>
+
+
+  </section>
+</div>
+<%- include('../partials/footer.ejs') %>

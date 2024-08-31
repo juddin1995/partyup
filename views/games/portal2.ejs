@@ -13,13 +13,10 @@
   </form>
 
   <section class="comments-display">
-    <% owner.comments.forEach((comment) => { %>
-    <p><%= owner.username %> says:</p>
-    <p><%= comment.content %></p>
+    <% game.comments.forEach((comment) => { %>
+    <p><%= comment.user %> says:</p>
+    <p><%= comment.text %></p>
     <% }); %>
-
-    
-
   </section>
 </div>
 <%- include('../partials/footer.ejs') %>

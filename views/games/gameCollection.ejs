@@ -1,60 +1,18 @@
 <%- include('../partials/header.ejs') %>
 
 <div class="game-container">
-  <div>
-    <section class="portal2">
-      <img
-        src="https://cdn2.steamgriddb.com/grid/9ebc0e97da8e0e5083fea7203f194d2b.png"
-        alt="Portal 2 Cover Art"
-        class="portal2-image"
-      />
-    </section>
-    <a href="/games/gameCollection/portal2" class="find-players-link">Portal 2</a>
-  </div>
-
-  <div>
-    <section class="chainedtogether">
-      <img
-        src="https://cdn2.steamgriddb.com/grid/2a0c42d296cf1c678179d4731694e667.png"
-        alt="Chained Together Cover Art"
-        class="chainedtogether-image"
-      />
-    </section>
-    <a href="/games/gameCollection/chainedTogether" class="find-players-link">Chained Together</a>
-  </div>
-
-  <div>
-    <section class="eldenring">
-      <img
-        src="https://cdn2.steamgriddb.com/grid/a0abf0396a718b8982fce0b80181d8cb.png"
-        alt="Elden Ring Cover Art"
-        class="eldenring-image"
-      />
-    </section>
-    <a href="/games/gameCollection/eldenRing" class="find-players-link">Elden Ring</a>
-  </div>
-
-  <div>
-    <section class="ittakestwo">
-      <img
-        src="https://cdn2.steamgriddb.com/grid/84d8df6932e202152767f7579f32c613.png"
-        alt="It Takes Two Cover Art"
-        class="ittakestwo-image"
-      />
-    </section>
-    <a href="/games/gameCollection/itTakesTwo" class="find-players-link">It Takes Two</a>
-  </div>
-
-  <div>
-    <section class="wobblylife">
-      <img
-        src="https://cdn2.steamgriddb.com/grid/dec47d14501a56581864f100d5571632.png"
-        alt="Wobbly Life Cover Art"
-        class="wobblylife-image"
-      />
-    </section>
-    <a href="/games/gameCollection/wobblyLife" class="find-players-link">Wobbly Life</a>
-  </div>
+  <% games.forEach((game) => { %>
+    <div>
+      <section class="game-item">
+        <img
+          src="<%= game.urlCover %>"
+          alt="<%= game.title %> Cover Art"
+          class="game-image"
+        />
+      </section>
+      <a href="/games/<%= game._id %>" class="find-players-link"><%= game.title %></a>
+    </div>
+<% }); %>
 </div>
 
 <%- include('../partials/footer.ejs') %>
