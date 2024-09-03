@@ -58,7 +58,7 @@ Make an account then select a game that you want to comment on or read the comme
 
 ## Live Demo
 
-You can use the application [here](https://moviestar-624ac53691a3.herokuapp.com/)
+You can use the application [here]()
 
 # Next Steps
 

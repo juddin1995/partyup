@@ -11,7 +11,7 @@ body {
   background-color: rgb(5, 6, 7);
 }
 
-h2, p {
+h1, h2, p {
   color: white;
 }
 
@@ -55,6 +55,7 @@ form {
   display: grid;
   grid-template-columns: auto auto;
   gap: 2vmin;
+  color: white;
 }
 
 form * {
@@ -62,7 +63,9 @@ form * {
   padding: 1vmin;
   border-radius: 1vmin;
   margin: 1vmin 1vmin;
+  
 }
+
 
 button:hover {
   background-color: lightslategray;
@@ -99,6 +102,8 @@ button:hover {
 
 .comments {
   margin-top: 5vmin;
+  display: flex;
+  flex-direction: column-reverse;
 }
 
 .comments-display {
