@@ -10,11 +10,6 @@ router.get("/", ensureLoggedIn, async (req, res) => {
   res.render("games/gameCollection.ejs", { games });
 });
 
-// router.get("/portal2", ensureLoggedIn, async (req, res) => {
-//   const owner = await User.findById(req.user._id);
-//   res.render("games/portal2.ejs", { owner });
-// });
-
 router.post("/:gameId/comment", ensureLoggedIn, async (req, res) => {
   try {
     const { gameId } = req.params;
