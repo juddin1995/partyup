@@ -58,7 +58,7 @@ Make an account then select a game that you want to comment on or read the comme
 
 ## Live Demo
 
-You can use the application [here]()
+You can use the application [here](https://party-up-games-650d6c49fd15.herokuapp.com)
 
 # Next Steps
 
